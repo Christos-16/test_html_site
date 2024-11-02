@@ -102,32 +102,33 @@
     <!-- JavaScript for Form Validation (Lab 3) -->
    <!-- JavaScript for Form Validation and Displaying Thank You Message -->
    <script>
-    // Find the form and add event listener
+    // Event listener για την υποβολή της φόρμας
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default submission
+        event.preventDefault(); // Αποτρέπει την αυτόματη υποβολή της φόρμας
 
-        // Check the fields for name and email
-        const name = document.querySelector('input[name="fullname"]').value;
-        const email = document.querySelector('input[name="email"]').value;
+        // Έλεγχος των πεδίων name και email
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
 
         if (!name || !email) {
             alert('Please fill in your name and email.');
-            return; // Stop if fields are empty
+            return; // Σταματά αν τα πεδία είναι κενά
         }
 
-        // Submit the form to Netlify
+        // Υποβολή της φόρμας στο Netlify
         this.submit();
 
-        // Hide the form and show the thank you message
+        // Απόκρυψη της φόρμας και εμφάνιση του "Thank You" μηνύματος
         document.getElementById('contactForm').style.display = 'none';
         document.getElementById('thankYouMessage').style.display = 'block';
 
-        // After 5 seconds, refresh the page
+        // Μετά από 5 δευτερόλεπτα, ανανέωση της σελίδας
         setTimeout(function() {
             location.reload();
         }, 5000); // 5000ms = 5 seconds
     });
 </script>
+
 
 
 </body>
