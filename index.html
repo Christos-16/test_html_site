@@ -97,32 +97,37 @@
     </footer>
 
     <!-- JavaScript for Form Validation (Lab 3) -->
-    <script>
-        // Find the form and add event listener
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent automatic submission of the form
+   <!-- JavaScript for Form Validation and Displaying Thank You Message -->
+<script>
+    // Find the form and add event listener
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent automatic submission of the form
     
-            // Check the fields for name and email
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+        // Check the fields for name and email
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
     
-            if (!name || !email) {
-                alert('Please fill in your name and email.');
-                return; // Stop if the fields are not filled in
-            }
+        if (!name || !email) {
+            alert('Please fill in your name and email.');
+            return; // Stop if the fields are not filled in
+        }
     
-            // Submit the form to Netlify
-            this.submit();
-    
-            // Hide the form and display the "Thank you" message
-            document.getElementById('contactForm').style.display = 'none';
+        // Submit the form to Netlify
+        this.submit();
+
+        // Hide the form and display the "Thank you" message
+        document.getElementById('contactForm').style.display = 'none';
         document.getElementById('thankYouMessage').style.display = 'block';
 
-        // After 5 seconds the page is refreshed
+        // Smoothly scroll to the thank you message
+        document.getElementById('thankYouMessage').scrollIntoView({ behavior: 'smooth' });
+
+        // After 5 seconds, refresh the page
         setTimeout(function() {
             location.reload();
         }, 5000); // 5000ms = 5 seconds
     });
-    </script>
+</script>
+
 </body>
 </html>
