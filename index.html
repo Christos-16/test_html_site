@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe</title>
+    <!-- Link to the CSS file (Lab 1 will focus on styling) -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section (Lab 1) -->
+    <header>
+        <h1>Jane Doe</h1>
+        <p>Aspiring Software Developer</p>
+        <!-- Placeholder image for the profile picture -->
+        <img src="https://picsum.photos/150" alt="Jane Doe" width="150">
+    </header>
+
+    <!-- About Me Section (Lab 1) -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Jane, a second-year computer science student at XYZ University. I'm passionate about web development and enjoy creating interactive web applications.</p>
+    </section>
+
+    <!-- Resume Section (Lab 1) -->
+    <section id="resume">
+        <h2>Resume</h2>
+
+        <h3>Education</h3>
+        <ul>
+            <li>B.Sc. in Computer Science, XYZ University (2022 - Present)</li>
+        </ul>
+
+        <h3>Skills</h3>
+        <ul>
+            <li>Programming Languages: Python, JavaScript, C++</li>
+            <li>Web Development: HTML, CSS, React</li>
+        </ul>
+
+        <h3>Experience</h3>
+        <ul>
+            <li>Intern at ABC Tech Solutions (Summer 2023)</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section (Lab 1) -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <h3>Portfolio Website</h3>
+        <p>A personal website to showcase my projects and skills.</p>
+        <a href="https://github.com/janedoe/portfolio-website" target="_blank">View on GitHub</a>
+
+        <h3>Weather App</h3>
+        <p>A web application that displays weather information using an external API.</p>
+        <a href="https://github.com/janedoe/weather-app" target="_blank">View on GitHub</a>
+    </section>
+
+    <!-- Contact Me Section (Lab 3) -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="#" method="post" id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <!-- Footer Section (Lab 1) -->
+    <footer>
+        <p>&copy; 2023 Jane Doe</p>
+        <a href="https://www.linkedin.com/in/janedoe" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/janedoe" target="_blank">GitHub</a>
+    </footer>
+
+    <!-- JavaScript for Form Validation (Lab 3) -->
+    <script>
+        // Adding form validation to ensure name and email fields are filled before submitting
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            if (!name || !email) {
+                alert('Please fill out both the name and email fields.');
+                event.preventDefault(); // Prevent form submission if fields are empty
+            }
+        });
+    </script>
+</body>
+</html>
