@@ -58,30 +58,31 @@
     </section>
 
     <!-- Contact Me Section (Lab 3) -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-    
-        <!-- Thank you message setup -->
-        <div id="thankYouMessage" style="display: none;">
-            <p>Thank you for your message! I will get back to you soon.</p>
+<section id="contact">
+    <h3 class="h3 form-title">Contact Form</h3>
+
+    <!-- Adding hidden thank you message -->
+    <div id="thankYouMessage" style="display: none;">
+        <p>Thank you for your message! I will get back to you soon.</p>
+    </div>
+
+    <!-- Form setup for Netlify -->
+    <form name="contactForm" method="POST" netlify netlify-honeypot="bot-field" id="contactForm" data-netlify="true">
+        <input type="hidden" name="form-name" value="contactForm">
+
+        <div class="input-wrapper">
+            <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+            <input type="email" name="email" class="form-input" placeholder="Email address" required>
         </div>
-    
-        <!-- Form setup for Netlify -->
-        <form action="/" method="POST" netlify netlify-honeypot="bot-field" name="contactForm" id="contactForm" data-netlify="true">
-            <input type="hidden" name="form-name" value="contactForm">
-    
-            <!-- Updated with existing CSS classes -->
-            <div class="input-wrapper">
-                <input type="text" id="name" name="name" class="form-input" placeholder="Full name" required>
-                <input type="email" id="email" name="email" class="form-input" placeholder="Email address" required>
-            </div>
-    
-            <textarea id="message" name="message" class="form-input" placeholder="Your Message" required></textarea>
-    
-            <input type="submit" value="Send" class="form-btn">
-        </form>
-    </section>
-    
+
+        <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+
+        <button class="form-btn" type="submit">
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Send Message</span>
+        </button>
+    </form>
+</section>
 
     
     
