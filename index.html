@@ -116,8 +116,13 @@
     
             // Hide the form and display the "Thank you" message
             document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('thankYouMessage').style.display = 'block';
-        });
+        document.getElementById('thankYouMessage').style.display = 'block';
+
+        // After 5 seconds the page is refreshed
+        setTimeout(function() {
+            location.reload();
+        }, 5000); // 5000ms = 5 seconds
+    });
     </script>
 </body>
 </html>
