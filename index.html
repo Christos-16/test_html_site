@@ -60,19 +60,29 @@
     <!-- Contact Me Section (Lab 3) -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <form action="#" method="post" id="contactForm">
+        <form action="/" method="POST" netlify netlify-honeypot="bot-field" name="contactForm" id="contactForm">
+            <!-- Κρυφό πεδίο για την αναγνώριση της φόρμας από το Netlify -->
+            <input type="hidden" name="form-name" value="contactForm">
+        
+            <!-- Κρυφό πεδίο για αποτροπή spam -->
+            <p style="display: none;">
+                <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+            </p>
+        
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-
+            <input type="text" id="name" name="name" required>
+        
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-
+            <input type="email" id="email" name="email" required>
+        
             <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
-
+            <textarea id="message" name="message" required></textarea>
+        
             <input type="submit" value="Send">
         </form>
     </section>
+    
+    
 
     <!-- Footer Section (Lab 1) -->
     <footer>
@@ -87,12 +97,15 @@
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
-            if (!name || !email) {
-                alert('Please fill out both the name and email fields.');
-                event.preventDefault(); // Prevent form submission if fields are empty
+            // Basic validation for email to check for "@" character
+            if (!name || !email || !message || !email.includes('@')) {
+                alert('Please fill out all fields correctly and include "@" in the email.');
+                event.preventDefault(); // Prevent form submission if validation fails
             }
         });
+
     </script>
 </body>
 </html>
