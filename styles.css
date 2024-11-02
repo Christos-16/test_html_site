@@ -95,16 +95,40 @@ form textarea {
   border-radius: 4px;
 }
 
-form input[type="submit"] {
+.form-btn {
   background-color: #50b3a2;
   color: #fff;
   border: none;
   padding: 15px 30px;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease; 
 }
 
-form input[type="submit"]:hover {
+.form-btn:hover {
+  background-color: #3e8e7e;
+}
+
+/* Submit Button Styling */
+form input[type="submit"],
+.form-submit {
+  background-color: #50b3a2;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form input[type="submit"]:hover,
+.form-submit:hover {
   background-color: #3e8e7e;
 }
 
@@ -130,14 +154,15 @@ footer a:hover {
 /* Responsive Styles (Lab 1) */
 @media (max-width: 768px) {
   header h1 {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   header p {
-      font-size: 18px;
+    font-size: 18px;
   }
 
-  form input[type="submit"] {
-      width: 100%;
+  form input[type="submit"],
+  .form-submit {
+    width: 100%;
   }
 }
