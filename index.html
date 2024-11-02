@@ -60,11 +60,16 @@
     <!-- Contact Me Section (Lab 3) -->
     <section id="contact">
         <h2>Contact Me</h2>
+        <!-- Adding a hidden message "Thank you" -->
+        <div id="thankYouMessage" style="display: none;">
+            <p>Thank you for your message! I will get back to you soon.</p>
+        </div>
+    
         <form action="/" method="POST" netlify netlify-honeypot="bot-field" name="contactForm" id="contactForm">
-            <!-- Κρυφό πεδίο για την αναγνώριση της φόρμας από το Netlify -->
+            <!-- This hidden field is needed for the recognition of the form by Netlify -->
             <input type="hidden" name="form-name" value="contactForm">
         
-            <!-- Κρυφό πεδίο για αποτροπή spam -->
+            <!-- Hidden field to prevent spam  -->
             <p style="display: none;">
                 <label>Don’t fill this out if you're human: <input name="bot-field"></label>
             </p>
@@ -93,19 +98,26 @@
 
     <!-- JavaScript for Form Validation (Lab 3) -->
     <script>
-        // Adding form validation to ensure name and email fields are filled before submitting
+        // Find the form and add event listener
         document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent automatic submission of the form
+    
+            // Check the fields for name and email
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Basic validation for email to check for "@" character
-            if (!name || !email || !message || !email.includes('@')) {
-                alert('Please fill out all fields correctly and include "@" in the email.');
-                event.preventDefault(); // Prevent form submission if validation fails
+    
+            if (!name || !email) {
+                alert('Please fill in your name and email.');
+                return; // Stop if the fields are not filled in
             }
+    
+            // Submit the form to Netlify
+            this.submit();
+    
+            // Hide the form and display the "Thank you" message
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
         });
-
     </script>
 </body>
 </html>
